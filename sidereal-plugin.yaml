@@ -1,0 +1,75 @@
+name: steam-blade-mcp
+version: "0.1.0"
+description: "Steam gaming platform — library, achievements, friends, store data, market prices"
+author: groupthink-dev
+licence: MIT
+tier: certified
+homepage: https://github.com/Groupthink-dev/steam-blade-mcp
+contract: gaming-v1
+
+services:
+  gaming:
+    player_summary: steam_profile
+    library: steam_library
+    game_details: steam_game
+    search_games: steam_search
+    recent_games: steam_recent
+    achievements: steam_achievements
+    friends: steam_friends
+    game_news: steam_news
+    global_stats: steam_stats
+    inventory: steam_inventory
+    market_price: steam_price
+    player_count: steam_players
+
+setup:
+  icon: "\U0001F3AE"
+  blurb: "Steam gaming platform — library stats, achievements, friends, store data, and market prices."
+  auth_model: api_key
+  complexity: trivial
+  fields:
+    - key: STEAM_API_KEY
+      label: "Steam Web API Key"
+      secret: true
+      required: true
+      placeholder: "Hex key from steamcommunity.com/dev/apikey"
+      help: "Register at steamcommunity.com/dev/apikey (requires Steam purchase history)"
+    - key: STEAM_ID
+      label: "Steam ID (64-bit)"
+      secret: false
+      required: true
+      placeholder: "76561198012345678"
+      help: "Your 17-digit Steam ID. Find via steamid.io or your profile URL."
+  test:
+    endpoint: "https://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key={STEAM_API_KEY}"
+    auth_style: none
+  prerequisites:
+    - "Steam account with at least one purchase"
+  help:
+    - label: "Get Steam API Key"
+      url: "https://steamcommunity.com/dev/apikey"
+    - label: "Find your Steam ID"
+      url: "https://steamid.io"
+    - label: "Steam Web API documentation"
+      url: "https://developer.valvesoftware.com/wiki/Steam_Web_API"
+
+install:
+  runtime: uv
+  package: steam-blade-mcp
+  command: steam-blade-mcp
+
+env:
+  - name: STEAM_API_KEY
+    description: "Steam Web API key"
+    secret: true
+  - name: STEAM_ID
+    description: "Default Steam ID (64-bit, 17 digits)"
+
+requires:
+  sidereal: ">=0.40"
+
+conformance:
+  required: "4/4"
+  recommended: "4/4"
+  optional: "4/5"
+  last_tested: "2026-04-07"
