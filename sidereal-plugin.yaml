@@ -4,6 +4,8 @@ description: "Steam gaming platform — library, achievements, friends, store da
 author: groupthink-dev
 licence: MIT
 tier: certified
+author_type: first-party
+readiness: production
 homepage: https://github.com/Groupthink-dev/steam-blade-mcp
 contract: gaming-v1
 
