@@ -6,18 +6,19 @@ licence: MIT
 tier: certified
 author_type: first-party
 readiness: production
-homepage: https://github.com/Groupthink-dev/steam-blade-mcp
+homepage: https://github.com/groupthink-dev/steam-blade-mcp
 contract: gaming-v1
 
 services:
   gaming:
-    player_summary: steam_profile
-    library: steam_library
+    profile: steam_profile
+    achievements: steam_achievements
+    achievement_summary: steam_achievements
+    games_played: steam_library
+    games_recent: steam_recent
+    friends: steam_friends
     game_details: steam_game
     search_games: steam_search
-    recent_games: steam_recent
-    achievements: steam_achievements
-    friends: steam_friends
     game_news: steam_news
     global_stats: steam_stats
     inventory: steam_inventory
@@ -68,10 +69,11 @@ env:
     description: "Default Steam ID (64-bit, 17 digits)"
 
 requires:
-  sidereal: ">=0.40"
+  stallari: ">=0.60"
 
 conformance:
   required: "4/4"
-  recommended: "4/4"
-  optional: "4/5"
-  last_tested: "2026-04-07"
+  recommended: "2/4"
+  optional: "2/6"
+  gated: "0/3"
+  last_tested: "2026-04-18"
