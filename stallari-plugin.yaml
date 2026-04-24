@@ -2,7 +2,7 @@ name: steam-blade-mcp
 version: "0.1.1"
 description: "Steam gaming platform — library, achievements, friends, store data, market prices"
 author: groupthink-dev
-licence: MIT
+license: MIT
 tier: certified
 author_type: first-party
 readiness: production
