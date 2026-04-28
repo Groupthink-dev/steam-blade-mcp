@@ -1,6 +1,6 @@
 [project]
 name = "steam-blade-mcp"
-version = "0.1.1"
+version = "0.2.0"
 description = "Steam gaming platform MCP — library, achievements, friends, store, market data"
 readme = "README.md"
 license = { text = "MIT" }
